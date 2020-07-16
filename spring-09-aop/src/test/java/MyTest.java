@@ -9,5 +9,6 @@ public class MyTest {
         UserService userService = context.getBean("userService", UserService.class);
 
         userService.select();
+
     }
 }
