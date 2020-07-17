@@ -1,16 +1,12 @@
 import com.conan.mapper.UserMapper;
 import com.conan.pojo.User;
-import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import java.io.IOException;
-
 public class MyTest {
-    @Test
-    public void test() throws IOException {
+    public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        UserMapper userMapper = context.getBean("userMapper2", UserMapper.class);
+        UserMapper userMapper = context.getBean("userMapper", UserMapper.class);
         for (User user : userMapper.selectUser()) {
             System.out.println(user);
         }
